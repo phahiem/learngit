@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<body>
+<form name="myForm" id="myForm">
+
+<h1 align=center> Employee Salary Calculater</h1> 
+<h3 align=center> Welcome to Online Salary Calculater </h3>
+   <div align=center> <table  >
+  <tr><td> Empolyee ID: </td> <td><input type="number" name="fname" value=""> </td><br> 
+
+
+ 
+  <tr> <td>Employee Name:</td> <td> <input type="text" name="lname" value=""></td></tr><br> 
+  
+
+  <tr> <td>Employee Father Name:</td> <td><input type="text" name="s"></td></tr><br> 
+  
+
+   
+  <tr><td>  Gender </td><td> 
+
+ <tr><td> Male </td><td>                  <input type = "radio"
+                        name = "radSize"
+                 
+                        value = ""
+                        checked="checked" /> </td></tr>
+
+<br>
+
+  <tr><td>Female </td><td>         <input type = "radio"
+                 name = "radSize"
+                 
+                 value = "" /> </td></tr><br>
+  
+ <tr><td>CNIC :</td><td> <input type="text"  data-inputmask="'mask': '99999-9999999-9'"  placeholder="XXXXX-XXXXXXX-X"  name="cnic" required="" ></td></tr> <br>
+ 
+ <tr><td>Basic Salary*:</td><td> <input type="number" id="basic" value="" ></td></tr><br>
+ <tr><td> Utilities*:</td><td> <span id="utility" > </span></td></tr><br>
+
+<!--  Utilities*: <input type="textbox" id="utility" ><br>
+ -->
+
+<tr><td> House Rent*:</td><td> <span id="rent"> </span></td></tr> <br>
+ <tr><td>Tax Percentage*:</td><td> <span  id="tax"> </span></td></tr> <br>
+ <tr><td>Total Salary*:</td><td> <span id="total"> </span></td></tr><br>
+ <tr><td><label>Tax year*:</td><td> </label>
+             <select id = "myList">
+               <option value = "1">2014</option>
+               <option value = "2">2015</option>
+               <option value = "3">2016</option>
+               <option value = "4">2017</option>
+			   <option value = "5">2018</option>
+
+             </select></td></tr>
+ 
+ <br> <tr><td><input type="button" onClick="Calculate()" value="Calculate" />
+ <button type="reset">Clear</button></td></tr>
+ 
+ 
+ 
+</form>
+
+ 
+
+</div>
+</table>
+
+<script>
+
+document.getElementById("myForm").onsubmit=function(){
+    calculate();
+    return false;
+};
+        
+
+
+             function Calculate() 
+{
+
+                        
+                      
+
+
+                     num1 = document.getElementById("basic").value;
+                      if ( num1 == "" ){
+					 alert("Basic Salary is missing!");
+					 return;
+					 }
+					 
+
+					num3 = document.getElementById("utility").innerHTML = num1*10/100;
+					num4 = document.getElementById("rent").innerHTML = num1*8/100;
+					num5 = document.getElementById("tax").innerHTML = num1*2/100;
+                                        var num6 = Number(num1)+Number(num3)+Number(num4)-Number(num5);
+                                        document.getElementById("total").innerHTML =num6;
+
+
+
+                    
+
+                
+
+
+
+              
+
+                  
+
+
+
+
+
+ 
+
+ }
+                  
+
+
+
+
+           
+
+</script>
+</body>
+</html>
+

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<body>
+<form name="myForm" id="myForm" >
+
+<h1 align=center> Employee Salary Calculater</h1> 
+<h3 align=center> Welcome to Online Salary Calculater </h3>
+
+  <div align="center"> Empolyee ID:  <input type="number" name="fname" value=""> <br> 
+
+
+ 
+   Employee Name: <input type="text" name="lname" value=""><br> 
+
+
+  Employee Father Name: <input type="text" name="s"><br> 
+  
+
+   
+     Gender  
+
+ Male                   <input type = "radio"
+                        name = "radSize"
+                 
+                        value = ""
+                        checked="checked" /> 
+
+<br>
+
+  Female         <input type = "radio"
+                 name = "radSize"
+                 
+                 value = "" /> <br>
+  
+ CNIC : <input type="text"  data-inputmask="'mask': '99999-9999999-9'"  placeholder="XXXXX-XXXXXXX-X"  name="cnic" required="" > <br>
+ 
+ Basic Salary*: <input type="number" id="basic" value="" ><br>
+  Utilities*: <span id="utility" > </span><br>
+
+<!--  Utilities*: <input type="textbox" id="utility" ><br>
+ -->
+
+ House Rent*: <span id="rent"> </span> <br>
+ Tax Percentage*: <span  id="tax"> </span> <br>
+ Total Salary*: <span id="total"> </span><br>
+ <label>Tax year </label>
+             <select id = "myList">
+               <option value = "1">2014</option>
+               <option value = "2">2015</option>
+               <option value = "3">2016</option>
+               <option value = "4">2017</option>
+			   <option value = "5">2018</option>
+
+             </select>
+ 
+ <br> <input type="button" onClick="Calculate()" value="Calculate" />
+ <button type="reset">Clear</button>
+ 
+ 
+ 
+</form>
+
+ 
+
+</div>
+
+
+<script>
+
+document.getElementById("myForm").onsubmit=function(){
+    calculate();
+    return false;
+};
+        
+
+
+             function Calculate() 
+{
+
+                        
+                      
+
+
+                     num1 = document.getElementById("basic").value;
+                      if ( num1 == "" ){
+					 alert("Basic Salary is missing!");
+					 return;
+					 }
+					 
+					num3 = document.getElementById("utility").innerHTML = num1*10/100;
+					num4 = document.getElementById("rent").innerHTML = num1*8/100;
+					num5 = document.getElementById("tax").innerHTML = num1*2/100;
+					document.getElementById("total").innerHTML = num3+num4+num5 ;
+
+
+
+                    
+
+                
+
+
+
+              
+
+                  
+
+
+
+
+
+ 
+
+ }
+                  
+
+
+
+
+           
+
+</script>
+</body>
+</html>
